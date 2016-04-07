@@ -19,12 +19,10 @@
 		<require-file name="PinFirstMessage.integrate.php" destination="SOURCEDIR" />
 		<require-file name="PinFirstMessage.english.php" destination="LANGUAGEDIR/english">English language strings</require-file>
 		<code>install.php</code>
-		<hook hook="integrate_general_mod_settings" file="SOURCEDIR/PinFirstMessage.integrate.php" function="Pin_First_Message_Integrate::general_mod_settings" />
 	</install>
 	<uninstall for="1.0 - 1.0.99">
 		<remove-file name="SOURCEDIR/PinFirstMessage.integrate.php" />
 		<remove-file name="LANGUAGEDIR/english/PinFirstMessage.english.php" />
 		<code>install.php</code>
-		<hook reverse="true" hook="integrate_general_mod_settings" file="SOURCEDIR/PinFirstMessage.integrate.php" function="Pin_First_Message_Integrate::general_mod_settings" />
 	</uninstall>
 </package-info>
