@@ -4,9 +4,31 @@ class Pin_First_Message_Integrate
 {
 	protected static $_topicInfo = null;
 
+
+	public static function general_mod_settings(&$config_vars)
+	{
+		global $txt; // need $txt 'cause loadLanguage only fills in the setting's name
+		loadLanguage('PinFirstMessage');
+		$config_vars = array_merge($config_vars, array(
+			array(
+				'select',
+				'pin_first_msg',
+				'name' => 'pin_first_msg',
+				array(
+					'sticky' => $txt['pin_first_msg_sticky'],
+					'all' => $txt['pin_first_msg_all'],
+					'disabled' => $txt['pin_first_msg_disabled'],
+				),
+			),
+			'',
+		));
+	}
+
 	public static function display_topic($topicInfo)
 	{
-		if (!$topicInfo['is_sticky'])
+		global $modSettings;
+
+		if ($modSettings['pin_first_msg'] == 'disabled' || ($modSettings['pin_first_msg'] == 'sticky' && !$topicInfo['is_sticky']))
 			return;
 
 		self::$_topicInfo = $topicInfo;

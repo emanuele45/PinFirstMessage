@@ -8,19 +8,21 @@
  * @author emanuele
  * @license   BSD http://opensource.org/licenses/BSD-3-Clause
  *
- * @version 0.0.1
+ * @version 0.0.2
  */
 	]]></license>
 	<id>emanuele:pinfirstmessage</id>
 	<name>Pin First Message</name>
-	<version>0.0.1</version>
+	<version>0.0.2</version>
 	<type>modification</type>
 	<install for="1.0 - 1.0.99">
 		<require-file name="PinFirstMessage.integrate.php" destination="SOURCEDIR" />
+		<require-file name="PinFirstMessage.english.php" destination="LANGUAGEDIR/english">English language strings</require-file>
 		<code>install.php</code>
 	</install>
 	<uninstall for="1.0 - 1.0.99">
 		<remove-file name="SOURCEDIR/PinFirstMessage.integrate.php" />
+		<remove-file name="LANGUAGEDIR/english/PinFirstMessage.english.php" />
 		<code>install.php</code>
 	</uninstall>
 </package-info>

@@ -11,6 +11,11 @@
 global $hooks, $mod_name;
 $hooks = array(
 	array(
+		'integrate_general_mod_settings',
+		'Pin_First_Message_Integrate::general_mod_settings',
+		'SOURCEDIR/PinFirstMessage.integrate.php',
+	),
+	array(
 		'integrate_display_topic',
 		'Pin_First_Message_Integrate::display_topic',
 		'SOURCEDIR/PinFirstMessage.integrate.php',
